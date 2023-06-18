@@ -1,0 +1,13 @@
+{% if Categories is defined %}
+<div class="dropdown w-auto align-self-end">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Catégorie
+          </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{ url_admin }}/">Pas de Catégorie</a></li>
+          {% for Category in Categories %}
+            <li><a class="dropdown-item" href="{{ url_admin }}/category/{{ Category.name }}">{{ Category.name }}</a></li>
+          {% endfor %}
+        </ul>
+</div>
+{% endif %}
